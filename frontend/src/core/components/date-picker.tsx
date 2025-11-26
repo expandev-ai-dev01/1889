@@ -30,25 +30,20 @@ function DatePicker({
     <Popover>
       <PopoverTrigger asChild>
         <Button
-          variant='outline'
+          variant="outline"
           disabled={disabled}
           className={cn(
             'w-[280px] justify-start text-left font-normal',
             !date && 'text-muted-foreground',
-            className,
+            className
           )}
         >
           <CalendarIcon />
           {date ? format(date, formatStr, { locale }) : <span>{placeholder}</span>}
         </Button>
       </PopoverTrigger>
-      <PopoverContent className='w-auto p-0'>
-        <Calendar
-          mode='single'
-          selected={date}
-          onSelect={onDateChange}
-          initialFocus
-        />
+      <PopoverContent className="w-auto p-0">
+        <Calendar mode="single" selected={date} onSelect={onDateChange} initialFocus />
       </PopoverContent>
     </Popover>
   );
